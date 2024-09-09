@@ -9,8 +9,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-    origin: 'https://airbnb-frontend-nine.vercel.app/' , // Replace with your frontend URL
-    optionsSuccessStatus: 200, // Some legacy browsers choke on 204
+    origin: ["https://airbnb-frontend-nine.vercel.app"] ,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    optionsSuccessStatus: 200, 
   };
   
 app.use(cors(corsOptions));
