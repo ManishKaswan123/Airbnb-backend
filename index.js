@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL , // Replace with your frontend URL
+    origin: 'http://localhost:3000' , // Replace with your frontend URL
     optionsSuccessStatus: 200, // Some legacy browsers choke on 204
   };
   
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use('/api/user', userRoutes);
 app.use('/api/items', itemRoutes);
 
-mongoose.connect(process.env.DB_CONNECTION, {
+mongoose.connect('mongodb+srv://manishkaswan88:LVWRMg2RFQePddQ1@cluster0.wkfy7.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => {
